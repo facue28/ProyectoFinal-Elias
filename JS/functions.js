@@ -1,3 +1,4 @@
+let total = 0;
 
 
 // Seleccion de nodos
@@ -66,9 +67,9 @@ const productFilter = (productosDisponibles) => {
             }
 
             ///Limpiar contenedor
-            const carritoContainer = document.getElementById("carrito-container");
+            ordenContainer.innerHTML= "";
             carritoContainer.innerHTML = "";
-            contenedor.innerHTML = ``;
+            contenedor.innerHTML = "";
 
             catFind.forEach((producto) => {
                 const div = document.createElement("div");
@@ -90,7 +91,7 @@ const productFilter = (productosDisponibles) => {
     })
 }
 
-let total = 0;
+
 //Renderizar carrito
 const renderCarrito = () => {
     carritoContainer.innerHTML = "";
@@ -101,12 +102,12 @@ const renderCarrito = () => {
     const thead = document.createElement("thead");
     const trHeader = document.createElement("tr");
     trHeader.innerHTML = `
-        <th scope="col">ID</th>
-        <th scope="col">Producto</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Sub Total</th>
-    `;
+                            <th scope="col">ID</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Sub Total</th>
+                        `;
     thead.appendChild(trHeader);
 
     const tbody = document.createElement("tbody");
@@ -126,11 +127,10 @@ const renderCarrito = () => {
                         <button type="button" class="btn btn-primary btn-sm buttonSuma" id=${producto.id}> + </button>
                         </td>
                         <td>$ ${producto.cantidad * producto.precio}</td>
-                    `
+                    `;
         tbody.appendChild(tr);
         total += producto.cantidad * producto.precio;
     });
-
     const trTotal = document.createElement("tr");
     trTotal.innerHTML = `<td colspan="4">Total</td><td>$ ${total}</td>`;
 
@@ -244,12 +244,12 @@ const addEventbuttonPagar = () => {
     const thead = document.createElement("thead");
     const trHeader = document.createElement("tr");
     trHeader.innerHTML = `
-        <th scope="col">ID</th>
-        <th scope="col">Producto</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Sub Total</th>
-    `;
+                            <th scope="col">ID</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Sub Total</th>
+                        `;
     thead.appendChild(trHeader);
 
     const tbody = document.createElement("tbody");
